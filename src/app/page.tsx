@@ -338,11 +338,19 @@ export default function HomePage() {
               <span className="text-sm md:text-base tracking-wide text-white">15 Years of Experience</span>
             </div>
 
+            {/* Divider */}
+            <div className="h-px w-24 md:w-px md:h-8 bg-white/30 rounded-full hidden md:block" />
+            <div className="h-px w-24 bg-white/30 rounded-full md:hidden" />
+
             {/* Stat 2 */}
             <div className="flex items-center space-x-3 group cursor-default">
               <ShieldCheck className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
               <span className="text-sm md:text-base tracking-wide text-white">20+ GP Practices</span>
             </div>
+
+            {/* Divider */}
+            <div className="h-px w-24 md:w-px md:h-8 bg-white/30 rounded-full hidden md:block" />
+            <div className="h-px w-24 bg-white/30 rounded-full md:hidden" />
 
             {/* Stat 3 */}
             <div className="flex items-center space-x-3 group cursor-default">
