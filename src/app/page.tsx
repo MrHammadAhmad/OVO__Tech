@@ -28,6 +28,7 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { FadeIn } from '@/components/ui/FadeIn';
+import { Typewriter } from '@/components/ui/Typewriter';
 import { PartnerLogos } from '@/components/sections/PartnerLogos';
 import { SurgeriesGrid } from '@/components/sections/SurgeriesGrid';
 import { WorkProcess } from '@/components/sections/WorkProcess';
@@ -235,8 +236,10 @@ export default function HomePage() {
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-                <span className="text-[#0F1E36]">The Healthcare AI & RPA</span><br />
-                Provider for <span className="text-[#02ACEA] italic font-black">NHS</span> Healthcare
+                <span className="text-[#0F1E36] block mb-2">The Healthcare AI & RPA Provider for</span>
+                <span className="block h-[1.2em]">
+                  <Typewriter words={["NHS Healthcare", "Private Clinics", "Medical Practices", "Hospitals"]} />
+                </span>
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-900 leading-relaxed font-medium">
@@ -299,10 +302,26 @@ export default function HomePage() {
             </FadeIn>
 
             {/* Hero Visual Mockup (Right) */}
-            <div className="lg:col-span-5 relative flex items-end justify-center self-end">
+            <FadeIn direction="left" delay={0.2} className="lg:col-span-5 relative flex items-end justify-center self-end">
               <div className="relative w-96 h-96 sm:w-[460px] sm:h-[460px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[500px] xl:w-[620px] xl:h-[620px]">
+                {/* Spinning Geometric Background Backdrop */}
+                <div className="absolute inset-0 z-0 animate-[spin_24s_linear_infinite] pointer-events-none flex items-center justify-center">
+                  <div className="absolute inset-0 -rotate-45">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-[6px] border-[#02ACEA] bg-white shadow-sm" />
+                  </div>
+                  <div className="absolute inset-0 rotate-[135deg]">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-[6px] border-[#02ACEA] bg-white shadow-sm" />
+                  </div>
+                  <div className="absolute inset-0 rotate-12">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-[2px] border-slate-300/60" />
+                  </div>
+                  <div className="absolute inset-0 -rotate-[60deg]">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-[2px] border-slate-300/60" />
+                  </div>
+                </div>
+
                 {/* SVG Static Circle Backdrop */}
-                <div className="absolute inset-0 z-0 select-none animate-pulse-slow">
+                <div className="absolute inset-0 z-0 select-none opacity-20 pointer-events-none">
                   <svg className="w-full h-full filter drop-shadow-[0_8px_32px_rgba(16,32,57,0.3)]" viewBox="0 0 200 200">
                     <circle cx="100" cy="100" r="85" fill="#02ACEA" />
                   </svg>
@@ -329,32 +348,50 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Hero Statistics Ribbon Bar */}
-      <div className="bg-[#02ACEA] py-5 border-t border-b border-white/5 shadow-md">
+      {/* Hero Statistics Ribbon Bar (Marquee) */}
+      <div className="bg-[#02ACEA] py-5 border-t border-b border-white/5 shadow-md overflow-hidden">
         <Container>
-          <div className="flex flex-row justify-start md:justify-around items-center gap-8 md:gap-4 text-white font-semibold overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-4 md:px-0 py-2 md:py-0">
-            {/* Stat 1 */}
-            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
-              <Clock className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
-              <span className="text-sm md:text-base tracking-wide text-white">15 Years of Experience</span>
-            </div>
+          <div className="marquee-container">
+            <div className="animate-marquee-loop flex items-center gap-12 text-white font-semibold pr-12">
+              
+              {/* Set 1 */}
+              <div className="flex items-center gap-12">
+                <div className="flex items-center space-x-3 cursor-default">
+                  <Clock className="h-5 w-5 text-white" />
+                  <span className="text-sm md:text-base tracking-wide text-white">15 Years of Experience</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+                <div className="flex items-center space-x-3 cursor-default">
+                  <ShieldCheck className="h-5 w-5 text-white" />
+                  <span className="text-sm md:text-base tracking-wide text-white">20+ GP Practices</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+                <div className="flex items-center space-x-3 cursor-default">
+                  <Award className="h-5 w-5 text-white fill-white/20" />
+                  <span className="text-sm md:text-base tracking-wide text-white">5 Industry Awards</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+              </div>
 
-            {/* Divider */}
-            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
+              {/* Set 2 (Duplicate for infinite loop) */}
+              <div className="flex items-center gap-12">
+                <div className="flex items-center space-x-3 cursor-default">
+                  <Clock className="h-5 w-5 text-white" />
+                  <span className="text-sm md:text-base tracking-wide text-white">15 Years of Experience</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+                <div className="flex items-center space-x-3 cursor-default">
+                  <ShieldCheck className="h-5 w-5 text-white" />
+                  <span className="text-sm md:text-base tracking-wide text-white">20+ GP Practices</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+                <div className="flex items-center space-x-3 cursor-default">
+                  <Award className="h-5 w-5 text-white fill-white/20" />
+                  <span className="text-sm md:text-base tracking-wide text-white">5 Industry Awards</span>
+                </div>
+                <div className="h-8 w-px bg-white/30 rounded-full" />
+              </div>
 
-            {/* Stat 2 */}
-            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
-              <ShieldCheck className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
-              <span className="text-sm md:text-base tracking-wide text-white">20+ GP Practices</span>
-            </div>
-
-            {/* Divider */}
-            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
-
-            {/* Stat 3 */}
-            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
-              <Award className="h-5 w-5 text-white fill-white/20 group-hover:scale-110 transition-transform duration-200" />
-              <span className="text-sm md:text-base tracking-wide text-white">5 Industry Awards</span>
             </div>
           </div>
         </Container>
