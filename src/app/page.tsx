@@ -27,6 +27,7 @@ import {
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { FadeIn } from '@/components/ui/FadeIn';
 import { PartnerLogos } from '@/components/sections/PartnerLogos';
 import { SurgeriesGrid } from '@/components/sections/SurgeriesGrid';
 import { WorkProcess } from '@/components/sections/WorkProcess';
@@ -228,7 +229,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Hero Copy (Left) */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <FadeIn direction="right" className="lg:col-span-7 space-y-6 text-left">
               <span className="text-xs font-bold tracking-widest text-[#02ACEA] uppercase block">
                 MEDICAL AUTOMATION SERVICES
               </span>
@@ -295,7 +296,7 @@ export default function HomePage() {
                   </div>
                 </form>
               )}
-            </div>
+            </FadeIn>
 
             {/* Hero Visual Mockup (Right) */}
             <div className="lg:col-span-5 relative flex items-end justify-center self-end">
@@ -323,7 +324,7 @@ export default function HomePage() {
                   <Cloud className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </Container>
       </section>
@@ -365,7 +366,7 @@ export default function HomePage() {
       {/* 3. CORE SOLUTIONS OVERVIEW */}
       <section className="py-20 bg-white">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold tracking-widest text-brand-blue uppercase">
               WORKFLOW SOLUTIONS
             </span>
@@ -375,12 +376,12 @@ export default function HomePage() {
             <p className="text-sm text-slate-500">
               Transform clinical and operational administration into automated pipelines. Choose from our key services built specifically for NHS frameworks.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {quickSolutions.map((sol) => (
-              <Card
-                key={sol.name}
+            {quickSolutions.map((sol, i) => (
+              <FadeIn key={sol.name} delay={i * 0.1}>
+                <Card
                 onClick={() => window.location.href = sol.href}
                 className="group flex flex-col justify-between min-h-[220px] transition-all duration-300 hover:bg-gradient-to-b hover:from-[#0F1E36] hover:to-[#02ACEA] hover:border-transparent hover:shadow-xl"
               >
@@ -400,6 +401,7 @@ export default function HomePage() {
                   Learn more <ArrowRight className="ml-1 h-3.5 w-3.5 text-brand-blue group-hover:text-white transition-colors" />
                 </div>
               </Card>
+              </FadeIn>
             ))}
           </div>
 
@@ -420,7 +422,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Dark Section Content */}
-            <div className="lg:col-span-6 space-y-6">
+            <FadeIn direction="right" className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase">
                 HEALTHCARE RPA PLATFORM
               </span>
@@ -453,10 +455,10 @@ export default function HomePage() {
                   Explore Solutions
                 </Button>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Dark Section Mockup UI */}
-            <div className="lg:col-span-6">
+            <FadeIn direction="left" delay={0.2} className="lg:col-span-6">
               <div className="bg-[#080d16] border border-white/10 rounded-2xl p-6 shadow-2xl space-y-6">
                 <div className="flex items-center justify-between border-b border-white/5 pb-4">
                   <div className="flex items-center space-x-2">
@@ -502,7 +504,7 @@ export default function HomePage() {
                 </div>
 
               </div>
-            </div>
+            </FadeIn>
 
           </div>
         </Container>
@@ -512,9 +514,9 @@ export default function HomePage() {
       <section className="py-16 bg-slate-50 border-b border-brand-border">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
-            {stats.map((item) => (
+            {stats.map((item, i) => (
+              <FadeIn key={item.label} delay={i * 0.1}>
               <div
-                key={item.label}
                 className="bg-white border border-brand-border p-6 rounded-2xl shadow-[0_2px_8px_rgba(15,23,42,0.02)]"
               >
                 <p className="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-1">
@@ -524,6 +526,7 @@ export default function HomePage() {
                   {item.label}
                 </p>
               </div>
+              </FadeIn>
             ))}
           </div>
         </Container>
@@ -532,7 +535,7 @@ export default function HomePage() {
       {/* 6. FEATURE GRID SECTION */}
       <section className="py-20 bg-white">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <FadeIn className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-bold tracking-widest text-brand-blue uppercase">
               WHY OVOTECH
             </span>
@@ -542,13 +545,14 @@ export default function HomePage() {
             <p className="text-sm text-slate-500">
               Ovotech ensures clinical governance is maintained throughout every step.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {keyFeatures.map((feat) => {
+            {keyFeatures.map((feat, i) => {
               const Icon = feat.icon;
               return (
-                <div key={feat.title} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-4 text-center md:text-left flex flex-col">
+                <FadeIn key={feat.title} delay={i * 0.1}>
+                <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-4 text-center md:text-left flex flex-col h-full">
                   <div className="inline-flex p-3 bg-brand-blue/10 rounded-xl text-brand-blue mx-auto md:mx-0 self-center md:self-start">
                     <Icon className="h-6 w-6 text-brand-cyan" />
                   </div>
@@ -559,6 +563,7 @@ export default function HomePage() {
                     {feat.desc}
                   </p>
                 </div>
+                </FadeIn>
               );
             })}
           </div>
@@ -574,7 +579,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Support Copy */}
-            <div className="lg:col-span-5 space-y-6">
+            <FadeIn direction="right" className="lg:col-span-5 space-y-6">
               <span className="text-xs font-bold tracking-widest text-brand-blue uppercase">
                 DEDICATED TEAMS
               </span>
@@ -601,10 +606,10 @@ export default function HomePage() {
                   Contact Support
                 </Button>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Support Cards */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <FadeIn direction="left" delay={0.2} className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card hoverEffect={false} className="space-y-4 border-slate-200">
                 <div className="p-2.5 bg-brand-blue/10 text-brand-blue w-fit rounded-lg">
                   <Users className="h-6 w-6 text-brand-cyan" />
@@ -624,7 +629,7 @@ export default function HomePage() {
                   Consultant Medical Professionals who review rules templates, clinical guidelines, and coordinate clinical safety compliance assessments.
                 </p>
               </Card>
-            </div>
+            </FadeIn>
 
           </div>
         </Container>

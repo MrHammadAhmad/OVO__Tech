@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '../ui/Container';
+import { FadeIn } from '../ui/FadeIn';
 import { Search, Wrench, Rocket, TrendingUp } from 'lucide-react';
 
 export function WorkProcess() {
@@ -38,23 +39,24 @@ export function WorkProcess() {
 
       <Container>
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <FadeIn className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
             How Can We Work With You
           </h2>
           <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto">
             From flexible staffing to full-scale technology builds, here&apos;s how we engage with your business at every stage.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Process Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column (01 & 02) */}
           <div className="lg:col-span-4 space-y-6">
-            {steps.slice(0, 2).map((step) => {
+            {steps.slice(0, 2).map((step, i) => {
               const Icon = step.icon;
               return (
+                <FadeIn key={step.num} delay={i * 0.1} direction="right">
                 <div 
                   key={step.num}
                   className="bg-white/[0.04] border border-white/10 rounded-3xl p-6 shadow-xl relative overflow-hidden group hover:bg-white/[0.07] hover:border-brand-cyan/20 transition-all duration-300"
@@ -72,12 +74,13 @@ export function WorkProcess() {
                     {step.desc}
                   </p>
                 </div>
+                </FadeIn>
               );
             })}
           </div>
 
           {/* Middle Column (Doctor Graphic) */}
-          <div className="lg:col-span-4 flex justify-center items-center relative py-8">
+          <FadeIn delay={0.2} className="lg:col-span-4 flex justify-center items-center relative py-8">
             <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[380px] lg:h-[380px] xl:w-[440px] xl:h-[440px] flex items-center justify-center">
               
               {/* Purple Angled Stripe Pattern Behind Circle */}
@@ -103,7 +106,7 @@ export function WorkProcess() {
               </div>
 
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column (03 & 04) */}
           <div className="lg:col-span-4 space-y-6">
