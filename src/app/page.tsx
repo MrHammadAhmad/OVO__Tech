@@ -319,7 +319,7 @@ export default function HomePage() {
                 <div className="absolute top-[34%] right-[8%] z-20 animate-float-medium opacity-85 pointer-events-none">
                   <Brain className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
-                <div className="absolute top-[20%] left-[28%] z-20 animate-float-fast opacity-85 pointer-events-none">
+                <div className="absolute top-[18%] left-[16%] z-20 animate-float-fast opacity-85 pointer-events-none">
                   <Cloud className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
               </div>
