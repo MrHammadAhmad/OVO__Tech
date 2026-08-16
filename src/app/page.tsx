@@ -548,14 +548,14 @@ export default function HomePage() {
             {keyFeatures.map((feat) => {
               const Icon = feat.icon;
               return (
-                <div key={feat.title} className="space-y-4 text-center md:text-left">
-                  <div className="inline-flex p-3 bg-brand-blue/10 rounded-xl text-brand-blue mx-auto md:mx-0">
+                <div key={feat.title} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 space-y-4 text-center md:text-left flex flex-col">
+                  <div className="inline-flex p-3 bg-brand-blue/10 rounded-xl text-brand-blue mx-auto md:mx-0 self-center md:self-start">
                     <Icon className="h-6 w-6 text-brand-cyan" />
                   </div>
                   <h3 className="text-lg font-bold text-brand-navy">
                     {feat.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed flex-grow">
                     {feat.desc}
                   </p>
                 </div>
