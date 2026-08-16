@@ -9,7 +9,7 @@
   --color-brand-blue: #02ACEA;
   --color-brand-border: #e2e8f5;
   --color-brand-card: #ffffff;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-raleway), system-ui, -apple-system, sans-serif;
 
   --animate-float-slow: float-slow 6s ease-in-out infinite;
   --animate-float-medium: float-medium 4.5s ease-in-out infinite;
