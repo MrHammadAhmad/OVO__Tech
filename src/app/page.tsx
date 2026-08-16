@@ -331,29 +331,27 @@ export default function HomePage() {
       {/* Hero Statistics Ribbon Bar */}
       <div className="bg-[#02ACEA] py-5 border-t border-b border-white/5 shadow-md">
         <Container>
-          <div className="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-4 text-white font-semibold">
+          <div className="flex flex-row justify-start md:justify-around items-center gap-8 md:gap-4 text-white font-semibold overflow-x-auto snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-4 md:px-0 py-2 md:py-0">
             {/* Stat 1 */}
-            <div className="flex items-center space-x-3 group cursor-default">
+            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
               <Clock className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
               <span className="text-sm md:text-base tracking-wide text-white">15 Years of Experience</span>
             </div>
 
             {/* Divider */}
-            <div className="h-px w-24 md:w-px md:h-8 bg-white/30 rounded-full hidden md:block" />
-            <div className="h-px w-24 bg-white/30 rounded-full md:hidden" />
+            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
 
             {/* Stat 2 */}
-            <div className="flex items-center space-x-3 group cursor-default">
+            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
               <ShieldCheck className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
               <span className="text-sm md:text-base tracking-wide text-white">20+ GP Practices</span>
             </div>
 
             {/* Divider */}
-            <div className="h-px w-24 md:w-px md:h-8 bg-white/30 rounded-full hidden md:block" />
-            <div className="h-px w-24 bg-white/30 rounded-full md:hidden" />
+            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
 
             {/* Stat 3 */}
-            <div className="flex items-center space-x-3 group cursor-default">
+            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
               <Award className="h-5 w-5 text-white fill-white/20 group-hover:scale-110 transition-transform duration-200" />
               <span className="text-sm md:text-base tracking-wide text-white">5 Industry Awards</span>
             </div>
