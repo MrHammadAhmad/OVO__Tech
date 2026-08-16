@@ -102,14 +102,14 @@ export function Navbar() {
       </div>
 
       <Container>
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <img 
                 src="/logo.png" 
                 alt="OVO TECH" 
-                className="h-8 w-auto object-contain select-none" 
+                className="h-15 w-auto object-contain select-none" 
               />
             </Link>
           </div>

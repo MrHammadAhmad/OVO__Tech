@@ -220,7 +220,7 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 pb-0 lg:pt-10 lg:pb-0 bg-[#f8fafc] border-b border-brand-border overflow-hidden">
+      <section className="relative pt-0 pb-0 lg:pt-0 lg:pb-0 bg-[#f8fafc] border-b border-brand-border overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -301,9 +301,9 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative flex items-end justify-center self-end">
               <div className="relative w-96 h-96 sm:w-[460px] sm:h-[460px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[500px] xl:w-[620px] xl:h-[620px]">
                 {/* SVG Static Circle Backdrop */}
-                <div className="absolute inset-0 z-0 select-none">
+                <div className="absolute inset-0 z-0 select-none animate-pulse-slow">
                   <svg className="w-full h-full filter drop-shadow-[0_8px_32px_rgba(16,32,57,0.3)]" viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="80" fill="#02ACEA" />
+                    <circle cx="100" cy="100" r="85" fill="#02ACEA" />
                   </svg>
                 </div>
 
@@ -313,14 +313,14 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating Outline Icons matching reference (no white boxes) */}
-                <div className="absolute top-[34%] left-[-8%] z-20 animate-bounce opacity-85 pointer-events-none">
-                  <Rocket className="h-6 w-6 text-[#0F1E36]" strokeWidth={1.5} />
+                <div className="absolute top-[34%] left-[8%] z-20 animate-float-slow opacity-85 pointer-events-none">
+                  <Rocket className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
-                <div className="absolute top-[34%] right-[-8%] z-20 animate-[pulse_3.5s_infinite] opacity-85 pointer-events-none">
-                  <Brain className="h-6 w-6 text-[#0F1E36]" strokeWidth={1.5} />
+                <div className="absolute top-[34%] right-[8%] z-20 animate-float-medium opacity-85 pointer-events-none">
+                  <Brain className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
-                <div className="absolute top-[6%] left-[16%] z-20 opacity-85 pointer-events-none">
-                  <Cloud className="h-6 w-6 text-[#0F1E36]" strokeWidth={1.5} />
+                <div className="absolute top-[20%] left-[28%] z-20 animate-float-fast opacity-85 pointer-events-none">
+                  <Cloud className="h-10 w-10 text-[#0F1E36]" strokeWidth={1.5} />
                 </div>
               </div>
             </div>

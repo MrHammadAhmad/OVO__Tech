@@ -44,7 +44,7 @@ export function Footer() {
               <img 
                 src="/logo-footer.png" 
                 alt="OVO TECH" 
-                className="h-8 w-auto object-contain select-none" 
+                className="h-15 w-auto object-contain select-none" 
               />
             </Link>
             <p className="text-sm leading-relaxed max-w-sm text-slate-400">
