@@ -22,7 +22,9 @@ import {
   Rocket,
   Brain,
   Cloud,
-  Stethoscope
+  Stethoscope,
+  Globe,
+  Monitor
 } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -374,6 +376,24 @@ export default function HomePage() {
             <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
               <Award className="h-5 w-5 text-white fill-white/20 group-hover:scale-110 transition-transform duration-200" />
               <span className="text-sm md:text-base tracking-wide text-white">5 Industry Awards</span>
+            </div>
+
+            {/* Divider */}
+            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
+
+            {/* Stat 4 */}
+            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
+              <Monitor className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
+              <span className="text-sm md:text-base tracking-wide text-white">9 Developed Softwares</span>
+            </div>
+
+            {/* Divider */}
+            <div className="h-8 w-px bg-white/30 rounded-full shrink-0" />
+
+            {/* Stat 5 */}
+            <div className="flex items-center space-x-3 group cursor-default shrink-0 snap-center">
+              <Globe className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-200" />
+              <span className="text-sm md:text-base tracking-wide text-white">3 Countries Worldwide</span>
             </div>
           </div>
         </Container>
