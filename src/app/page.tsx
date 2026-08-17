@@ -549,27 +549,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 5. STATISTICS SECTION */}
-      <section className="py-16 bg-slate-50 border-b border-brand-border">
-        <Container>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
-            {stats.map((item, i) => (
-              <FadeIn key={item.label} delay={i * 0.1}>
-              <div
-                className="bg-white border border-brand-border p-6 rounded-2xl shadow-[0_2px_8px_rgba(15,23,42,0.02)]"
-              >
-                <p className="text-3xl sm:text-4xl font-extrabold text-brand-navy mb-1">
-                  {item.number}
-                </p>
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                  {item.label}
-                </p>
-              </div>
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </section>
+
 
       {/* 6. FEATURE GRID SECTION */}
       <section className="py-20 bg-white">
